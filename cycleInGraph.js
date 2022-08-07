@@ -29,10 +29,7 @@ let checkNodeForCycle = (edges, start, index) => {
 function cycleInGraph(edges) {
   for (let i = 0; i < edges.length; i++) {
     let check = checkNodeForCycle(edges, edges[i], i);
-    console.log('check', check);
-    console.log('uhh', check === true);
     if (check === true) {
-      console.log('???');
       return true;
     }
   }
