@@ -1,7 +1,4 @@
 function spiralTraverse(array) {
-  /*
-    We want to store different invokable logic for up down left and right
-  */
   let output = [];
 
   let handleDirection = (yChange, xChange, y, x) => {
@@ -21,15 +18,12 @@ function spiralTraverse(array) {
 
       return true;
     }
-
     if (array[y][x] === null) {
       x = x + xChange;
       y = y + yChange;
     }
 
     while (y < array.length && x < array[y].length && !!array[y][x]) {
-      //console.log(`Array: ${array}, y: ${y}, x: ${x}`)
-      console.log('throwing here');
       output.push(array[y][x]);
       array[y][x] = null;
 
@@ -37,7 +31,6 @@ function spiralTraverse(array) {
       x = x + xChange;
     }
 
-    console.log(`returning ${y}, ${x}`);
     return [y - yChange, x - xChange];
   };
 
